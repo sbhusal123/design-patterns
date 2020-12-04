@@ -1,0 +1,11 @@
+[run]
+branch = True
+
+omit =
+    coverage/*
+    env/*
+    .vscode/
+
+[html]
+directory = coverage
+

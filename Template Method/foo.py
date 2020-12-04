@@ -1,12 +1,14 @@
 # Abstract Base Class Imports
-from abc import ABC, abstractclassmethod
+from abc import ABCMeta, abstractmethod
 
 
-class AverageCalculator(ABC):
+class AverageCalculator():
     """
         Average Calculator for Any Data Structure. Template Method/
         Class inheriting this class must implement abstract methods
     """
+
+    __metaclass__ = ABCMeta
 
     # noqa
     def average(self):
@@ -22,11 +24,11 @@ class AverageCalculator(ABC):
         finally:
             self.dispose()
 
-    @abstractclassmethod
+    @abstractmethod
     def has_next(self):
         pass
 
-    @abstractclassmethod
+    @abstractmethod
     def next_item(self):
         pass
 
@@ -34,7 +36,7 @@ class AverageCalculator(ABC):
         pass
 
 
-class FileAverageCalcularor(AverageCalculator):
+class FileAverageCalculator(AverageCalculator):
     """Calculates the average of the numbers on each line"""
 
     # noqa
